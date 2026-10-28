@@ -1,0 +1,100 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-gas-sensor",
+      "id": "gas",
+      "top": 300,
+      "left": 40,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz",
+      "top": -150,
+      "left": 60,
+      "attrs": {
+        "volume": "0.1"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -160,
+      "left": 160,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -90,
+      "left": 140,
+      "attrs": {
+        "value": "220"
+      },
+      "rotate": 90
+    }
+  ],
+  "connections": [
+    [
+      "gas:VCC",
+      "uno:5V",
+      "red",
+      []
+    ],
+    [
+      "gas:GND",
+      "uno:GND.3",
+      "black",
+      []
+    ],
+    [
+      "gas:AOUT",
+      "uno:A0",
+      "blue",
+      []
+    ],
+    [
+      "bz:1",
+      "uno:GND.1",
+      "black",
+      []
+    ],
+    [
+      "bz:2",
+      "uno:9",
+      "orange",
+      []
+    ],
+    [
+      "uno:13",
+      "led1:A",
+      "green",
+      []
+    ],
+    [
+      "led1:C",
+      "r1:1",
+      "black",
+      []
+    ],
+    [
+      "r1:2",
+      "uno:GND.1",
+      "black",
+      []
+    ]
+  ],
+  "dependencies": {}
+}
